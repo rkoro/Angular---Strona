@@ -1,0 +1,18 @@
+body {
+    text-align: center;
+  }
+  .dwaKomp {
+    margin:auto;
+    display: inline-block;
+  }
+  ul {
+    padding-inline-start: 0px;
+  }
+  .elo li{
+    float: left;
+    font-size: 10px;
+    color: #ccc;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+  }

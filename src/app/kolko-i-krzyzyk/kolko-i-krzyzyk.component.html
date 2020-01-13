@@ -1,0 +1,14 @@
+<div class="box">
+  <h1>Kółko i krzyżyk.</h1>
+  <h2>Napisane w TypeScript.</h2>
+  <div class=info>{{winInfo}} {{playersTurn}} </div>
+  <ul class='Pl' [ngClass]="{
+      'myHover': !win
+    }">
+    <div *ngFor="let polaRow of pola; let x = index">
+      <li (click)="onMove(x,y)" *ngFor="let pole of polaRow; let y = index">{{pole}}</li>
+    </div>
+  </ul>
+  <div class="clearfix"></div>
+  <button (click)="set()">Reset</button>
+</div>

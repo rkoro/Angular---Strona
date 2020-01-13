@@ -1,0 +1,39 @@
+<div class="box">
+    <h1>API wysyłające żądania do bazy PostgreSQL (backend napisany w Python)</h1>
+    <div class="tabela">Rekordy pobrane z bazy PostgreSQL.
+        <table cellspacing="0" cellpadding="1" border="1" width="300">
+            <tr>
+                <th>id</th>
+                <th>Liczba użytkownika</th>
+                <th>Liczba generowana</th>
+                <th>Data wpisu</th>
+                <th>Usuń wpis</th>
+            </tr>
+            <tr *ngFor="let rekord of rekordy">
+                <td>{{rekord.id}}</td>
+                <td>{{rekord.liczba_uz}}</td>
+                <td>{{rekord.liczba_gen}}</td>
+                <td>{{rekord.data_wpisu}}</td>
+                <td><button (click)="deleteItem(rekord)">Usuń</button></td>
+            </tr>
+        </table>
+
+    </div>
+    <button (click)="showRekordy()">Wyświetl wszystkie rekordy bazy "liczby"</button>
+    <form [formGroup]="mojForm" (ngSubmit)="insertRekord(mojForm.value)">
+        <div>
+            <label for="liczba_uz">
+                Dodaj liczbę użytkownika:
+            </label>
+            <input id="liczba_uz" type="text" formControlName="liczba_uz">
+        </div>
+        <button class="button" type="submit">Wyslij</button>
+    </form>
+</div>
+
+<!--
+id?: number;
+liczba_uz?: number;
+liczba_gen?: number;
+data_wpisu?: string;  
+-->
